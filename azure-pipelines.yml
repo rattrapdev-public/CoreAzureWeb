@@ -27,14 +27,3 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure subscription 1(9e89c301-a9b0-4b17-8270-8569bb02b5bc)'
-    appType: 'webAppLinux'
-    WebAppName: 'rattrapcore'
-    deployToSlotOrASE: true
-    ResourceGroupName: 'Free'
-    SlotName: 'production'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
